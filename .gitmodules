@@ -1,3 +1,6 @@
 [submodule "@andreagardi/jwt-express-typeorm"]
 	path = @andreagardi/jwt-express-typeorm
 	url = https://github.com/andregardi/jwt-express-typeorm
+[submodule "@microsoft/TypeScript-Node-Starter"]
+	path = @microsoft/TypeScript-Node-Starter
+	url = https://github.com/microsoft/TypeScript-Node-Starter
