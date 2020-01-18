@@ -4,3 +4,6 @@
 [submodule "@microsoft/TypeScript-Node-Starter"]
 	path = @microsoft/TypeScript-Node-Starter
 	url = https://github.com/microsoft/TypeScript-Node-Starter
+[submodule "@nestjs/typescript-starter"]
+	path = @nestjs/typescript-starter
+	url = https://github.com/nestjs/typescript-starter
