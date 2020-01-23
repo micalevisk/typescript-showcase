@@ -1,0 +1,22 @@
+{
+  "presets": [
+    "react-app",
+    "@babel/preset-typescript",
+    ["@babel/preset-env", {
+      "targets": {
+        "node": true
+      }
+    }]
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "@components": "./src/components"
+      },
+      "extensions": [".ts", ".tsx"]
+    }],
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread"
+  ]
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import Contact from '../models/Contact';
 
 type Props = {
@@ -22,7 +23,7 @@ const ContactItem = ({ contact, onRemoveContact }: Props) => (
     <p>Nome: {contact.name}</p>
     <p>Endereço de e-mail: {contact.email}</p>
     <p>Telefone pra contato: {contact.phoneNumber}</p>
-    <button onClick={() => onRemoveContact(contact.id)}>Excluir</button>
+    <button onClick={() => onRemoveContact(contact.id)} type="button">Excluir</button>
   </Card>
 );
 

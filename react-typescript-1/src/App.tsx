@@ -1,15 +1,14 @@
 import React from 'react';
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
+
 import Contacts from './containers/Contacts';
 
-const App = () => {
-  return (
-    <>
-      <Contacts />
-      <Styles />
-    </>
-  );
-}
+const App = () => (
+  <>
+    <Contacts />
+    <Styles />
+  </>
+);
 
 
 const Styles = createGlobalStyle`
