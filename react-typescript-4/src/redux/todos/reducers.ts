@@ -2,11 +2,11 @@ import { ADD_TODO, TOGGLE_TODO, ITodo, TodosActionTypes } from './types';
 
 const INITIAL_STATE: ITodo[] = [];
 
-const todos = (state = INITIAL_STATE, action: TodosActionTypes): ITodo[] => {
+const todos = (slice = INITIAL_STATE, action: TodosActionTypes): ITodo[] => {
   switch (action.type) {
     case ADD_TODO:
       return [
-        ...state,
+        ...slice,
         {
           id: action.payload.id,
           text: action.payload.text,
@@ -15,14 +15,14 @@ const todos = (state = INITIAL_STATE, action: TodosActionTypes): ITodo[] => {
       ];
 
     case TOGGLE_TODO:
-      return state.map(todo =>
+      return slice.map(todo =>
         todo.id === action.payload.id
           ? { ...todo, completed: !todo.completed }
           : todo,
       );
 
     default:
-      return state;
+      return slice;
   }
 };
 
