@@ -1,9 +1,7 @@
 import {
   connect,
   MapStateToPropsParam,
-  MapDispatchToPropsFunction,
 } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import TodoList, { Props } from '../components/TodoList';
 import { toggleTodo } from '../redux/todos/actions';
 import { ITodo } from '../redux/todos/types';
@@ -38,9 +36,11 @@ const mapStateToProps: StateToProps = (
   todos: getVisibleTodos(state.todos, ownProps.filter),
 });
 
-type DispatchPropsFunc = MapDispatchToPropsFunction<DispatchProps, OwnProps>;
+const mapDispatchToProps = { toggleTodo };
+/*
 const mapDispatchToProps: DispatchPropsFunc = dispatch =>
   bindActionCreators({ toggleTodo }, dispatch);
+*/
 /*
 const mapDispatchToProps: DispatchPropsFunc = dispatch => ({
   toggleTodo: (id: number) => {
@@ -55,4 +55,3 @@ const VisibleTodoList = connect(
 )(TodoList);
 
 export default VisibleTodoList;
-
