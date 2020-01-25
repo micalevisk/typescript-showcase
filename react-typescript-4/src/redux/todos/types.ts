@@ -24,4 +24,4 @@ interface toggleTodoAction {
   };
 }
 
-export type TodosActionTypes = addTodoAction | toggleTodoAction;
+export type TodosActionTypes = Readonly<addTodoAction | toggleTodoAction>;
