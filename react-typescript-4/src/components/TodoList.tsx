@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Todo from './Todo';
-import { ITodo } from '../redux/todos/types';
+import { TodoState } from '../redux/todos/types';
 
-type Props = {
-  todos: ITodo[];
+export type Props = {
+  todos: TodoState;
   toggleTodo: (id: number) => void;
 };
 

@@ -5,12 +5,12 @@ import {
   VisibilityFilterActionTypes,
 } from './types';
 
-const INITIAL_STATE = VisibilityFilters.SHOW_ALL as VisibilityFilter;
+const INITIAL_STATE = VisibilityFilters.SHOW_ALL as Readonly<VisibilityFilter>;
 
 const visibilityFilter = (
   slice = INITIAL_STATE,
   action: VisibilityFilterActionTypes,
-): VisibilityFilter => {
+): typeof INITIAL_STATE => {
   switch (action.type) {
     case SET_VISIBILITY_FILTER:
       return action.payload.filter;

@@ -7,6 +7,8 @@ export interface ITodo {
   completed: boolean;
 }
 
+export type TodoState = ITodo[];
+
 interface addTodoAction {
   type: typeof ADD_TODO;
   payload: {

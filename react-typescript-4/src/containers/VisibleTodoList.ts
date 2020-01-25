@@ -4,12 +4,12 @@ import {
 } from 'react-redux';
 import TodoList, { Props } from '../components/TodoList';
 import { toggleTodo } from '../redux/todos/actions';
-import { ITodo } from '../redux/todos/types';
+import { TodoState } from '../redux/todos/types';
 import { RootState } from '../redux/rootReducer';
 
 import { VisibilityFilters } from '../redux/visibilityFilter/types';
 
-export const getVisibleTodos = (todos: ITodo[], filter: string) => {
+export const getVisibleTodos = (todos: TodoState, filter: string) => {
   switch (filter) {
     case VisibilityFilters.SHOW_COMPLETED:
       return todos.filter(todo => todo.completed);
@@ -23,7 +23,7 @@ export const getVisibleTodos = (todos: ITodo[], filter: string) => {
 };
 
 type StateProps = Omit<Props, 'toggleTodo'>;
-type DispatchProps = Omit<Props, 'todos'>;
+// type DispatchProps = Omit<Props, 'todos'>;
 type OwnProps = {
   filter: string;
 };

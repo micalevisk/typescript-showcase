@@ -1,8 +1,11 @@
-import { ADD_TODO, TOGGLE_TODO, ITodo, TodosActionTypes } from './types';
+import { ADD_TODO, TOGGLE_TODO, TodosActionTypes, TodoState } from './types';
 
-const INITIAL_STATE: ITodo[] = [];
+const INITIAL_STATE: Readonly<TodoState> = [];
 
-const todos = (slice = INITIAL_STATE, action: TodosActionTypes): ITodo[] => {
+const todos = (
+  slice = INITIAL_STATE,
+  action: TodosActionTypes
+): typeof INITIAL_STATE => {
   switch (action.type) {
     case ADD_TODO:
       return [
@@ -10,15 +13,15 @@ const todos = (slice = INITIAL_STATE, action: TodosActionTypes): ITodo[] => {
         {
           id: action.payload.id,
           text: action.payload.text,
-          completed: false,
-        },
+          completed: false
+        }
       ];
 
     case TOGGLE_TODO:
       return slice.map(todo =>
         todo.id === action.payload.id
           ? { ...todo, completed: !todo.completed }
-          : todo,
+          : todo
       );
 
     default:
