@@ -12,13 +12,12 @@ const Contacts = () => {
   const [contacts, setContacts] = useState(CONTACTS);
 
   const handleRemoveContact = (contactIdToRemove: string) => {
-    setContacts((currcontacts) =>
-      currcontacts.filter((contact) => contact.id !== contactIdToRemove));
+    setContacts((currcontacts) => currcontacts
+      .filter((contact) => contact.id !== contactIdToRemove));
   };
 
   const handleAddContact = (contact: Contact) => {
-    setContacts((currContacts) =>
-      currContacts.concat(contact));
+    setContacts((currContacts) => currContacts.concat(contact));
     setIsAddingContact(false);
   };
 
@@ -32,7 +31,13 @@ const Contacts = () => {
           <button onClick={() => setIsAddingContact(!isAddingContact)} type="button">Adicionar contato</button>
         </header>
         <S.ContactList>
-          {contacts.map((contact) => <ContactItem key={contact.id} contact={contact} onRemoveContact={handleRemoveContact} />)}
+          {contacts.map((contact) => (
+            <ContactItem
+              key={contact.id}
+              contact={contact}
+              onRemoveContact={handleRemoveContact}
+            />
+          ))}
         </S.ContactList>
       </S.Card>
     </S.Wrapper>

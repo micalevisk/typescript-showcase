@@ -8,9 +8,11 @@ module.exports = {
   extends: [
     'react-app',
     'airbnb',
-    'plugin:@typescript-eslint/recommended',
-    'prettier',
-    'prettier/@typescript-eslint',
+    'airbnb/hooks',
+    'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    // 'prettier',
+    // 'prettier/react',
+    'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
   ],
 
   ignorePatterns: [
@@ -36,6 +38,7 @@ module.exports = {
 
   rules: {
     'no-undef': 'off', // due to issue https://github.com/eslint/typescript-eslint-parser/issues/437
+    // 'max-len': 'off', // due to conflict with Prettier
     'quotes': ['error', 'single'],
     'react/jsx-filename-extension': [
       'error',
